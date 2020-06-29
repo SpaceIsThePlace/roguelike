@@ -8,11 +8,11 @@ var Enemy = preload("res://Entities/Enemies/Enemy.tscn")
 onready var tilemap = $TileMap
 onready var turn_number = 0
 
-var walls = []
+var tiles = [] # TODO 
 
 func _ready():
 	randomize()
-	walls = get_walls()
+	tiles = get_tiles()
 	instantiate_player(Vector2(0, 0))
 	instantiate_enemy(Vector2(96, 96))
 	instantiate_enemy(Vector2(320, 320))
@@ -37,12 +37,16 @@ func count_turns():
 	turn_number += 1
 	print("Turn number:" + String(turn_number))
 
-func get_walls(): # TODO extend this function to cover all type of tiles
-	var tiles = tilemap.get_used_cells()
-	for tile in tiles:
-		if tilemap.get_cellv(tile) == 0: # walls have id: 0 - I will need to create a dictionary with all tiles property 
-			walls.append(tile)
-	return walls
+func get_tiles(): # TODO change this function to cover all type of tiles
+	var cells = tilemap.get_used_cells()
+	for cell in cells:
+		if tilemap.get_cellv(cell) == 0: # walls have id: 0 - I will need to create a dictionary with all tiles property 
+			tiles.append({"coordinates":cell, "block": 1, "block_view":1})
+		if tilemap.get_cellv(cell) == 1: # grass/floor have id: 1` 
+			tiles.append({"coordinates":cell, "block": 0, "block_view":0})
+		elif tilemap.get_cellv(cell) == 2: # lava
+			tiles.append({"coordinates":cell, "block": 1, "block_view":0})
+	return tiles
 
 func _input(event):
 	if event.is_action_pressed("ui_quit") :

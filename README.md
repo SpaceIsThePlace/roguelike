@@ -1,5 +1,4 @@
 ## Introduction
-
 This is my personal entry for /r/roguelike dev Roguelike tutorial
 I will start by making a very simple roguelike (movement, randomly generated dungeon, permadeath, monster with limited IA), and then plan to expand it once the basics are done.
 The idea is to develop a full roguelike with some light tower-defense mechanics (not sure how they're going to work yet in a turn-based game).
@@ -16,8 +15,7 @@ The roguelike will be fully developed using Godot + GDScript. Tiles are from her
 ** The player can set up traps, turrets, and spawn creatures (might be class-based)
 ** After n + x turns, the item no longer needs protecting, and the player can access a portal to go to a new stage
 
-## Setting
-I'm a sucker for stories set in dying Earth scenarios, so that's probably what I will use. 
-The player will have to defend trees (maybe, I like the ecological theme as well) from spawns of creatures of unclear origins.
-
-
+## Implementation
+* I've created a Game scene that is in charge of drawing the map (TBD) instantiating player and enemies, and update the world when the player moves
+* I've decided not to use _process(delta) for the main game loop. Instead, the Player scene instance uses an _input() function that register the moves, instruct the player to move (if move is available), send a signal to the Scene that in turn instruct the enemies group to perform their next action (for now, just move in a random dimension)
+* The Game scene holds a list with a dictionary corresping to all the tiles. Each tile as an id (TBD), a type (tileset id), coordinates, a bool that defines if it walkable, and a bool that defines if it blocks the view.
