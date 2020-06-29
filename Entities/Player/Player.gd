@@ -6,6 +6,8 @@ signal player_action
 
 func _ready():
 	grid_position = position
+	color = Color(0.0, 1.0, 0.5, 1)
+	modulate = color
 
 func _input(event):
 	if event is InputEventKey:

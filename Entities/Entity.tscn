@@ -6,13 +6,12 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 464, 96, 16, 16 )
+region = Rect2( 896, 192, 32, 32 )
 
 [node name="Entity" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = SubResource( 1 )
-offset = Vector2( 8, 8 )
+offset = Vector2( 16, 16 )
 region_rect = Rect2( 385.774, 12.4015, 63.9248, 55.9826 )

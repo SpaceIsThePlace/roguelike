@@ -7,7 +7,7 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 384, 16, 16, 16 )
+region = Rect2( 768, 32, 32, 32 )
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

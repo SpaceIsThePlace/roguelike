@@ -122,7 +122,3 @@ ui_quit={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Walls"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

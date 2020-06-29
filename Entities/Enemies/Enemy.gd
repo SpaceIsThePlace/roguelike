@@ -4,6 +4,8 @@ class_name Enemy
 
 func _ready():
 	grid_position = position/tile_size;
+	color = Color(1.0, 0.0, 0.5, 1)
+	modulate = color
 
 func enemy_action():
 	var x = randi()%3 - 1
