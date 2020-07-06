@@ -24,7 +24,7 @@ func move(movement:Vector2):
 			break
 	if can_move:
 		set_grid_position(planned_grid_position)	
-	position = grid_position * tile_size	
+	position = grid_position * tile_size
 	can_move = true
 	
 func get_grid_position():
