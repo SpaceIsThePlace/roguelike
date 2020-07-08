@@ -4,8 +4,7 @@ class_name Player
 
 signal player_action
 
-func _ready():
-	grid_position = position
+func _ready():		
 	color = Color(0.0, 1.0, 0.5, 1)
 	modulate = color
 

@@ -3,7 +3,7 @@ extends Entity
 class_name Enemy
 
 func _ready():
-	grid_position = position/tile_size;
+	grid_position = position/TILE_SIZE;
 	color = Color(1.0, 0.0, 0.5, 1)
 	modulate = color
 
